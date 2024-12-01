@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --azul: #88a5bf;
+    --nude: #e9c7ac;
+    --amarelo: #ffd2a1;
+    --vermelho: #bf6341;
+    --marrom: #544339;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--marrom);
+}
+
+.container {
+    max-width: 90vw;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--nude);
+    padding: 10px 20px;
+    height: 8vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: var(--azul);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--nude);
+    border-radius: 5px;
+    color: var(--marrom);
+}
+
+.category-filter {
+    padding: 10px;
+    border: 1px solid var(--nude);
+    color: var(--marrom);
+    border-radius: 5px;
+}
+
+/* Product List */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.product-card {
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 200px;
+    border: 3px double var(--nude);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.product-image {
+    max-width: 100%;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--vermelho)
+}
+
+.product-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--vermelho);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-button:hover {
+    background-color:var(--amarelo);
+}
+
+.card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--vermelho);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    color: #333;
+    background-color: var(--nude);
+    width: 100vw;
+}
