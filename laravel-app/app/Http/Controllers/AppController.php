@@ -12,6 +12,10 @@ class AppController extends Controller
     // Exibe a lista de produtos
     public function index()
     {
+        return view('index');
+    }
+    public function login()
+    {
         return view('login');
     }
 

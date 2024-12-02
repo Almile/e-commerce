@@ -46,19 +46,22 @@ class CartController extends Controller
 
     // Atualizar a quantidade de um item no carrinho
     public function updateCart(Request $request)
-    {
-        $productId = $request->input('product_id');
-        $quantity = $request->input('quantity');
-        $cart = session()->get('cart', []);
+{
+    $quantities = $request->input('quantity'); // Obtemos o array de quantidades
+    $cart = session()->get('cart', []);
 
+    foreach ($quantities as $productId => $quantity) {
         if (isset($cart[$productId])) {
             // Atualizar a quantidade
             $cart[$productId]['quantidade'] = $quantity;
-            session()->put('cart', $cart);
         }
-
-        return redirect()->route('cart.show');
     }
+
+    session()->put('cart', $cart);
+
+    return redirect()->route('cart.checkout');
+}
+
 
     // Remover item do carrinho
     public function removeFromCart($productId)

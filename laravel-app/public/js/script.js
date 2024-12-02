@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 if (data.success) {
                     alert(data.message);
-                    button.setAttribute("name", "heart"); // Altera o ícone para mostrar que foi adicionado
                 } else {
                     alert(data.message);
                 }
@@ -67,3 +66,34 @@ function filterProducts() {
     torraFilter.addEventListener('change', filterProducts);
 
 });
+
+function updateCartTotals() {
+    let total = 0;
+
+    document.querySelectorAll('.quantity-input').forEach(function(input) {
+        const productId = input.getAttribute('data-id');
+        const price = parseFloat(input.getAttribute('data-price'));
+        const quantity = parseInt(input.value);
+        const subtotal = price * quantity;
+
+        document.getElementById('subtotal-' + productId).innerText = 'R$ ' + subtotal.toFixed(2).replace('.', ',');
+
+        total += subtotal;
+    });
+
+    document.getElementById('total').innerText = total.toFixed(2).replace('.', ',');
+}
+
+document.querySelectorAll('.quantity-input').forEach(function(input) {
+    input.addEventListener('change', function() {
+        updateCartTotals();
+    });
+});
+
+updateCartTotals();
+
+function addToCart(productId, quantity) {
+    console.log("Produto Adicionado:", productId, "Quantidade:", quantity);
+    alert('Produto adicionado ao carrinho!');
+}
+

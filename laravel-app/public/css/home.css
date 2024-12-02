@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    /*HOME*/
+:root{
+    --azul: #88a5bf;
+    --nude: #e9c7ac;
+    --amarelo: #ffd2a1;
+    --vermelho: #bf6341;
+    --marrom: #544339;
+}
+
+.navbar-default {
+    background-color: #B4CED9;
+}
+
+.navbar-default .navbar-nav .nav-link {
+    color: #fff;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.navbar-default .navbar-nav .nav-link:hover,
+.navbar-default .navbar-nav .nav-link:focus {
+    color: #eceaea;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-family: 'Carter One', sans-serif;
+    font-size: 1.5rem;
+}
+
+#home {
+    padding-top: 100px;
+    background-color: #FFD2A1 !important;
+}
+
+#produtos {
+    background-color: #F2DFBB;
+}
+
+.img-arredondada {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-left: 20px;
+}
+
+.card{
+    background-color: #D98D62 !important;
+    border: 2px solid #5A2E0A !important;
+    color: #ffffff !important;
+}
+
+.card-img-top{
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    margin: auto;
+}
+
+section {
+    padding: 50px;
+}
+
+.preco {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.img-coracao{
+    display: inline-block;
+}
+
+.adicionar {
+    display: flex; /* Disposição em linha */
+    justify-content: space-between; /* Espaço entre preço e botão */
+    align-items: center; /* Alinha verticalmente no centro */
+    margin-top: 10px;
+}
+
+.btn-carrinho {
+    background-color: #5A2E0A !important;
+    color: #FFFFFF !important;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-carrinho:hover {
+    background-color: #FFC107; /* Amarelo mais claro */
+}
+
+h1, h2, h5{
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container h2{
+    font-size: 35px;
+    text-align: left;
+}
+
+.d-flex, p, button{
+    font-family: "Parkinsans", sans-serif;
+}
+
+#sobre-nos {
+    background-color: #FFD2A1 !important;
+}
+
+#contato {
+    margin: 0;
+    background-color: #B4CED9 !important;
+}
+
+#login {
+    background-color: #F2DFBB;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--marrom);
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--nude);
+    border-radius: 5px;
+    color: var(--marrom);
+}
+
+.category-filter {
+    padding: 10px;
+    border: 1px solid var(--nude);
+    color: var(--marrom);
+    border-radius: 5px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.product-card {
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 200px;
+    border: 3px double var(--nude);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    max-width: 100%;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--vermelho)
+}
+
+.product-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--vermelho);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-button:hover {
+    background-color:var(--amarelo);
+}
+
+.card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--vermelho);
+}

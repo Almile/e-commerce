@@ -46,7 +46,7 @@ class AuthController extends Controller
             Auth::login($user);
 
             if ($user->tipo_usuario === 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('produto');
             }
 
             return redirect()->route('comprador.dashboard'); 
@@ -56,9 +56,13 @@ class AuthController extends Controller
     }
 
     // Logout
-    public function logout()
+ // Exemplo no controlador de logout
+    public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('login');
+        $request->session()->invalidate(); // Invalida a sessão atual
+        $request->session()->regenerateToken(); // Gera um novo token de sessão
+        return redirect('/login'); // Redireciona para a página de login
     }
+
 }

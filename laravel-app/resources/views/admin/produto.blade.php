@@ -3,17 +3,7 @@
 @section('title', 'Produtos')
 
 @section('content')
-<div class="container">
-    <h1 class="text-center my-4">Produtos</h1>
-  
-<a href="/create">Adicionar novo produto</a>
-
-@if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
-@endif
-@if(session('error'))
-    <div class="alert alert-danger">{{ session('error') }}</div>
-@endif
+<div class="container" id="container">
 
 <div class="filters">
     <input type="text" class="search-bar" placeholder="Pesquisar produtos..." />
@@ -32,29 +22,44 @@
 </div>
 
 
-<div class="product-list">
-    @foreach($produtos as $produto)
-        <div class="product-card"  data-torra="{{ $produto->torra }}" data-category="{{ $produto->categoria }}" data-name="{{ $produto->nome }}">
-            <div class="card-top">
-                <span>{{ $produto->categoria }}</span>
-                
-            </div>
-            <img src="{{ $produto->imagem }}" alt="Café Premium" class="product-image">
-            <h3 class="product-title">{{ $produto->nome }}</h3>
-            <p class="product-description">{{ $produto->descricao }}</p>
-            <p class="product-price">R$ {{ number_format($produto->preco, 2, ',', '.') }}</p>
-            
-
-            <a href="{{ route('produto.edit', $produto->id) }}">Editar</a>
-            <form action="{{ route('produto.destroy', $produto->id) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</button>
-            </form>
-
-        </div>
-    @endforeach
+<div class="decorative-border">
+    <table>
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($produtos as $produto)
+                <tr data-torra="{{ $produto->torra }}" data-category="{{ $produto->categoria }}" data-name="{{ $produto->nome }}">
+                    <td>
+                        <img src="{{ $produto->imagem }}" alt="{{ $produto->nome }}" class="img-thumbnail"  style="max-width: 60px;">
+                    </td>
+                    <td><div class="desc">{{ $produto->nome }}</div></td>
+                    <td>{{ $produto->categoria }}</td>
+                    <td> <div class="desc">{{ $produto->descricao }}</div></td>
+                    <td>R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
+                    <td >
+                        <div class="actions">
+                        <a href="{{ route('produto.edit', $produto->id) }}" class="button">Editar</a>
+                        <form action="{{ route('produto.destroy', $produto->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este produto?')" class="button">Excluir</button>
+                        </form>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
+
 
 </div>
 @endsection

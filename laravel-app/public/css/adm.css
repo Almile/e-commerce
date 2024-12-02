@@ -1,0 +1,118 @@
+.decorative-border {
+    max-height: 60vh; 
+    overflow-y: auto; 
+    padding: 10px; 
+}
+
+.decorative-border::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.decorative-border::-webkit-scrollbar-track {
+    background: #f8f3e900; 
+    border-radius: 10px;
+}
+
+.decorative-border::-webkit-scrollbar-thumb {
+    background: #6f4e3700;
+    border-radius: 10px;
+    border: 2px solid #f8f3e900; 
+}
+
+.decorative-border::-webkit-scrollbar-thumb:hover {
+    background: #a67d5c; 
+}
+
+.decorative-border {
+    scrollbar-width: 20px;
+}
+
+.decorative-border:hover,
+.decorative-border:focus{
+    scrollbar-color: var(--azul) #f8f3e900; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Georgia', serif; 
+    color: #6f4e37; 
+    background-repeat: no-repeat;
+    -webkit-mask-box-image: url("https://mdn.github.io/shared-assets/images/examples/mask-border-diamonds.png")
+    30 fill /          /* slice */
+    20px /             /* width */
+    1px                /* outset */
+    round;     
+    mask-border:
+    url("https://mdn.github.io/shared-assets/images/examples/mask-border-diamonds.png")
+    30 fill /        /* slice */
+    20px /           /* width */
+    1px              /* outset */
+    round; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
+}
+
+table thead {
+    background-color: var(--azul); 
+    color: #fff; 
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+table th, table td {
+    padding: 20px;
+    border: 1px solid #ccc; 
+}
+
+table tbody tr {
+    background-color: #ffffff; 
+}
+
+table tbody tr:hover {
+    background-color: #ffd2a13a;
+}
+
+.img-thumbnail {
+    max-width: 50px;
+    border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.actions .button {
+    border: none;
+    color: var(--azul);
+    background-color: transparent;
+    text-decoration: none;
+    padding: 2px 10px;
+    border: 3px double var(--azul);
+}
+
+.button:last-child {
+    color: var(--vermelho);
+    border: 3px double var(--vermelho);
+}
+
+.actions .button:hover {
+    opacity: 0.8;
+}
+
+
+table td .desc { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; 
+    line-clamp: 2;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; 
+    white-space: normal;
+}

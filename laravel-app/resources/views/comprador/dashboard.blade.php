@@ -31,26 +31,24 @@
 
     <div class="product-list">
         @foreach($produtos as $produto)
-            <div class="product-card"  data-torra="{{ $produto->torra }}" data-category="{{ $produto->categoria }}" data-name="{{ $produto->nome }}">
-                <div class="card-top">
-                    <span>{{ $produto->categoria }}</span>
-                    <!-- Formulário para adicionar ao carrinho -->
-                    <form action="{{ route('cart.add') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $produto->id }}">
-                        <button type="submit" class="btn btn-link add-to-cart">
-                            <ion-icon name="heart-outline"></ion-icon> 
-                        </button>
-                    </form>
-                </div>
+            <div class="product-card" data-torra="{{ $produto->torra }}" data-category="{{ $produto->categoria }}" data-name="{{ $produto->nome }}">
                 <img src="{{ asset($produto->imagem) }}" alt="{{ $produto->nome }}" class="product-image">
                 <h3 class="product-title">{{ $produto->nome }}</h3>
                 <p class="product-description">{{ $produto->descricao }}</p>
+                
+                <form action="{{ route('cart.add') }}" method="POST" class="btn-card">
                 <p class="product-price">R$ {{ number_format($produto->preco, 2, ',', '.') }}</p>
-                <a href="{{ url('/produtos/' . $produto->id) }}" class="product-button">Detalhes</a>
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $produto->id }}">
+                        <button type="submit" class="add-to-cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                            adicionar ao carrinho
+                        </button>
+                    </form>
             </div>
         @endforeach
     </div>
-
 </div>
+</div>
+
 @endsection
